@@ -11,6 +11,19 @@ Built and tested on a Stratco Allure Pavilion (louvre roof) controlled by a T-Ma
 > worked out from the publicly distributed T-Mate Android app and from testing against a
 > real box. Use at your own risk, and keep people and objects clear of anything that moves.
 
+## T-Mate or Daisy?
+
+Teleco makes two different boxes, and they need different integrations:
+
+| | This integration | [hass_teleco_daisy](https://github.com/andreasnuesslein/hass_teleco_daisy) |
+|---|---|---|
+| Box | **T-Mate** (Bluetooth) | **Daisy** (Wi-Fi) |
+| Connection | Direct Bluetooth, local, no cloud or account | Teleco's cloud, with your Teleco login |
+| App | T-Mate | Daisy |
+
+If you control your devices with the **T-Mate** app, use this one. If you use the
+**Daisy** app, use the Daisy integration instead.
+
 ## Features
 
 - **Cover entity** (device class: awning) with **open, close, stop** and a **position slider**.

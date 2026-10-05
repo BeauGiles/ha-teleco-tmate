@@ -1,0 +1,39 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Teleco T-Mate",
+        "data": {
+          "address": "Device",
+          "name": "Name",
+          "rc": "Receiver number"
+        }
+      },
+      "confirm": {
+        "title": "Set up T-Mate {address}",
+        "description": "Receiver number is the device index in the T-Mate app (usually 1).",
+        "data": {
+          "name": "Name",
+          "rc": "Receiver number"
+        }
+      }
+    },
+    "abort": {
+      "no_devices_found": "No T-Mate boxes found. Close the phone app (it holds the connection) and make sure a Bluetooth adapter or proxy is in range.",
+      "already_configured": "Already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Travel times",
+        "description": "Seconds for the roof to go fully closed to fully open, and back, timed from when it starts moving to when it stops.",
+        "data": {
+          "open_time": "Open time (s)",
+          "close_time": "Close time (s)"
+        }
+      }
+    }
+  }
+}

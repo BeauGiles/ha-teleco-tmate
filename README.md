@@ -5,7 +5,8 @@ Bluetooth box, which controls motorised awnings, roofs, shutters and gates from 
 T-Mate phone app. This integration talks to the box directly over Bluetooth Low Energy
 using Home Assistant's own Bluetooth stack, so you don't need the phone app.
 
-Built and tested on a Stratco Allure Pavilion (louvre roof) controlled by a T-Mate box.
+Built and tested on a Stratco Allure Pavilion (louvre roof) controlled by a T-Mate box
+driving a Teleco `TVPLS916CTS1` receiver.
 
 > **Unofficial.** Not affiliated with or endorsed by Teleco Automation. The protocol was
 > worked out from the publicly distributed T-Mate Android app and from testing against a
@@ -71,6 +72,17 @@ folder and restart.
    Assistant buttons. Default is 18 s each.
 4. Fully open or close it once (or press one of the "Set as fully…" buttons) so Home
    Assistant knows where it is. Partial positions work after that.
+
+## How it fits together
+
+The T-Mate box is a Bluetooth-to-radio bridge: it receives your command over Bluetooth and
+re-transmits it by 916 MHz radio to the motor's receiver (for example a Teleco
+`TVPLS916CTS1`). The receiver treats the box as one of its remotes, identified by the
+receiver number above. Any built-in sensors, such as a rain sensor wired to the receiver,
+act on the receiver directly and Home Assistant cannot see them.
+
+This link is one-way, so the receiver never reports its position back. That is why this
+integration estimates position instead of reading it.
 
 ## Limitations
 
